@@ -1,0 +1,10 @@
+[Adblock Plus 2.0]
+! Title: AnimeSaturn filters
+! Expires: 2 days (update frequency)
+! Homepage: https://gist.github.com/LukeSavefrogs/8262cff38d068c426700217cccf7235e
+!
+animesaturn.tv,animesaturn.so,animesaturn.in,animesaturn.cc,animesaturn.biz,animesaturn.com##.immagine-destra
+animesaturn.tv,animesaturn.so,animesaturn.in,animesaturn.cc,animesaturn.biz,animesaturn.com##.alert.alert-danger
+animesaturn.tv,animesaturn.so,animesaturn.in,animesaturn.cc,animesaturn.biz,animesaturn.com##.row.pt-2.pb-2
+animesaturn.tv,animesaturn.so,animesaturn.in,animesaturn.cc,animesaturn.biz,animesaturn.com##.alert.alert-saturn
+animesaturn.tv,animesaturn.so,animesaturn.in,animesaturn.cc,animesaturn.biz,animesaturn.com###footerdivfixed
