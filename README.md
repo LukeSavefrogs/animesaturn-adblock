@@ -10,7 +10,7 @@ Ad ogni **cambio di dominio** del sito (`animesaturn.biz` ➜ `animesaturn.tv`) 
 A seguito dell'aggiornamento sul server potrebbe essere necessario **svuotare la cache** o ripetere la [**procedura**](#Installazione) (in questo caso andrà sostituito il valore del parametro `?nocache=true` con un altro valore, ad esempio la data attuale `?nocache=23032023`), in quanto il filtro potrebbe essere bloccato dalla cache del browser.
 
 ## Installazione
-1. **Copia** [questo URL](https://gist.githubusercontent.com/LukeSavefrogs/8262cff38d068c426700217cccf7235e/raw/animesaturn_filters.txt?nocache=true)
+1. **Copia** [questo URL](https://raw.githubusercontent.com/LukeSavefrogs/animesaturn-adblock/main/animesaturn_filters.txt?nocache=true)
 2. Vai nelle **impostazioni** di [AdBlockPlus](https://adblockplus.org/)
 
   ![image](https://user-images.githubusercontent.com/33452387/227064430-ebe8d6bb-9b8d-4d81-a5b4-2db46d1ff9bd.png "Vai nelle impostazioni di AdBlockPlus")
