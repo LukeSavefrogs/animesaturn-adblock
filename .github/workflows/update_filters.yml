@@ -42,7 +42,7 @@ jobs:
             - name: "🚨 Execute script"
               run: poetry run python ./scripts/update_filters.py
 
-            - name: Commit & Push changes
+            - name: "📭 Commit & Push changes"
               uses: actions-js/push@master
               with:
                 github_token: ${{ secrets.GITHUB_TOKEN }}
