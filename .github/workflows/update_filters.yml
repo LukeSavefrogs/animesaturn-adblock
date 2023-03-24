@@ -1,0 +1,48 @@
+name: "Update Adblock filters file"
+
+on:
+    # Allows you to run this workflow manually from the Actions tab
+    workflow_dispatch:
+    
+    # Run this job everyday at midnight
+    schedule:
+        - cron: '0 0 * * *'
+
+jobs:
+    update:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "🛒 Checkout repository"
+              uses: actions/checkout@v3
+              with:
+                fetch-depth: 0
+                
+            - name: "🐍 Install Python"
+              uses: actions/setup-python@v4
+              with:
+                python-version: '3.9'
+                
+            - name: "🚀 Setup cache"
+              uses: actions/cache@v3
+              with:
+                key: ${{ github.ref }}
+                path: .cache
+                
+            - name: "📜 Install Poetry"
+              uses: abatilo/actions-poetry@v2
+              with:
+                poetry-version: 1.3.2
+                
+            - name: "🔍 Install dependencies"
+              run: poetry install
+
+            - name: "🚨 Execute script"
+              run: poetry run python ./scripts/update_filters.py
+
+            - name: Commit & Push changes
+              uses: actions-js/push@master
+              with:
+                github_token: ${{ secrets.GITHUB_TOKEN }}
+                # message: ""
+                # coauthor_name: "Luca Salvarani"
+                # coauthor_email: "lucasalvarani99@gmail.com"

@@ -1,0 +1,12 @@
+[Adblock Plus 2.0]
+! Title: {title}
+! Version: {version}
+! Last modified: {last_modified}
+! Expires: {expire} (update frequency)
+! Homepage: {homepage}
+!
+{website_domain}##.immagine-destra
+{website_domain}##.alert.alert-danger
+{website_domain}##.row.pt-2.pb-2
+{website_domain}##.alert.alert-saturn
+{website_domain}###footerdivfixed
