@@ -1,7 +1,7 @@
 [Adblock Plus 2.0]
-! Title: AnimeSaturn filter list
+! Title: AnimeSaturn filters
 ! Version: 1.0.0
-! Last modified: 24-03-2023 16:13:53
+! Last modified: 24-03-2023 16:23:58
 ! Expires: 2 days (update frequency)
 ! Homepage: https://github.com/LukeSavefrogs/animesaturn-adblock/
 !
