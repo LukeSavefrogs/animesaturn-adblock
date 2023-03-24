@@ -39,7 +39,7 @@ def main():
 
     # ********** Update the template **********
     filter_content = template.format(
-        title="AnimeSaturn filter list",
+        title="AnimeSaturn filters",
         version="1.0.0",
         last_modified=datetime.now().strftime("%d-%m-%Y %H:%M:%S"),
         expire="2 days",
