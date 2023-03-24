@@ -27,11 +27,11 @@ def main():
 
 
     # ********** Fetch the domains **********
-    reponse = requests.get(ANIMESATURN_URL)
-    if not reponse.ok:
+    response = requests.get(ANIMESATURN_URL)
+    if not response.ok:
         return False
 
-    soup = BeautifulSoup(reponse.text, features="html.parser")
+    soup = BeautifulSoup(response.text, features="html.parser")
     domains = list(map(lambda el: el["href"], soup.select("ol > li > a")))
     
     logging.info(f"Found {len(domains)} domains: {', '.join(domains)}")
