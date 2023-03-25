@@ -1,13 +1,16 @@
 # AnimeSaturn ad-blocker
-Questo filtro **rimuove** la maggior parte delle **pubblicità spam** presenti nel sito di [AnimeSaturn](https://www.animesaturn.me/).
+Questo filtro **rimuove** la maggior parte delle **pubblicità spam** ed altri elementi di distrazione presenti nel sito di [AnimeSaturn](https://www.animesaturn.me/).
 
 > _Nota bene:_  
 > _Questo elenco è stato testato solo su [AdBlockPlus](https://adblockplus.org/), pertanto se utilizzato su altri ad-blocker potrebbe non funzionare_.
-
+ 
 ### Attenzione
-Ad ogni **cambio di dominio** del sito (`animesaturn.biz` ➜ `animesaturn.tv`) il file andrà aggiornato.
+Entro **12 ore** da ogni **cambio di dominio** del sito (`animesaturn.biz` ➜ `animesaturn.tv`) il file verrà aggiornato automaticamente da una [Github Action](https://github.com/LukeSavefrogs/animesaturn-adblock/actions/workflows/update_filters.yml), pertanto _non sarà necessario alcun intervento manuale_.
 
-A seguito dell'aggiornamento sul server potrebbe essere necessario **svuotare la cache** o ripetere la [**procedura**](#Installazione) (in questo caso andrà sostituito il valore del parametro `?nocache=true` con un altro valore, ad esempio la data attuale `?nocache=23032023`), in quanto il filtro potrebbe essere bloccato dalla cache del browser.
+<!-- ### Informazioni
+
+- **Ultimo aggiornamento**:
+- **Dominio corrente**: <!-- DOMAIN -->
 
 ## Installazione
 1. **Copia** [questo URL](https://raw.githubusercontent.com/LukeSavefrogs/animesaturn-adblock/main/animesaturn_filters.txt?nocache=true)
