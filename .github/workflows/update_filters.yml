@@ -4,9 +4,9 @@ on:
     # Allows you to run this workflow manually from the Actions tab
     workflow_dispatch:
     
-    # Run this job everyday at midnight
+    # Run this job every 12 hours
     schedule:
-        - cron: '0 0 * * *'
+        - cron: '0 */12 * * *'
 
 permissions:
     contents: write
