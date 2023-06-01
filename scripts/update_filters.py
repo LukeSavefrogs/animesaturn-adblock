@@ -14,7 +14,7 @@ ANIMESATURN_URL  = "https://www.animesaturn.me/"
 TEMPLATES_FOLDER = pathlib.Path("templates/")
 OUTPUT_FILE      = pathlib.Path("animesaturn_filters.txt")
 
-LOG_FILENAME     = ".update_history.log"
+LOG_FILENAME     = "./logs/updates_history.log"
 LOG_MAX_LINES    = 100
 
 stdout_handler = logging.StreamHandler(sys.stdout)
