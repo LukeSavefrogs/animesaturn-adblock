@@ -1,6 +1,7 @@
 import pathlib
 import re
 from datetime import datetime
+import sys
 
 import requests
 from bs4 import BeautifulSoup
@@ -9,18 +10,56 @@ from urllib.parse import urlparse
 import logging
 
 
-logging.basicConfig(
-    level=logging.INFO, 
-    format='[%(asctime)s] %(levelname)-8s - %(message)s',
-    datefmt='%d-%m-%Y %H:%M:%S'
-)
-
-
 ANIMESATURN_URL  = "https://www.animesaturn.me/"
 TEMPLATES_FOLDER = pathlib.Path("templates/")
 OUTPUT_FILE      = pathlib.Path("animesaturn_filters.txt")
 
+LOG_FILENAME     = ".update_history.log"
+LOG_MAX_LINES    = 100
+
+stdout_handler = logging.StreamHandler(sys.stdout)
+stdout_handler.setLevel(logging.DEBUG)
+stdout_handler.setFormatter(
+    logging.Formatter(
+        '[%(asctime)s] %(levelname)-8s - %(message)s',
+        '%d-%m-%Y %H:%M:%S'
+    )
+)
+
+
+file_logger = logging.FileHandler(".update_history.log")
+file_logger.setLevel(logging.INFO)
+file_logger.setFormatter(
+    logging.Formatter(
+        '[%(asctime)s] %(levelname)-8s - %(message)s',
+        '%d-%m-%Y %H:%M:%S'
+    )
+)
+
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+logger.addHandler(stdout_handler)
+
+execution_logger = logging.getLogger("execution_logger")
+execution_logger.setLevel(logging.INFO)
+execution_logger.addHandler(file_logger)
+
+
 def main():
+    # ********** Clean the log **********
+    with open(".update_history.log", "a+") as file:
+        file.seek(0)
+        lines = file.readlines()
+
+        if len(lines) >= LOG_MAX_LINES:
+            file.seek(0)
+            file.truncate(0)
+            file.writelines(lines[-LOG_MAX_LINES:])
+            logger.debug(f"Log truncated to match maximum lines ({LOG_MAX_LINES})")
+
+
+
     # ********** Load the template **********
     template = ""
     with open(TEMPLATES_FOLDER / "animesaturn_filters.txt.template", "r") as file:
@@ -36,7 +75,7 @@ def main():
     soup = BeautifulSoup(response.text, features="html.parser")
     domains = list(map(lambda el: el["href"], soup.select("ol > li > a")))
     
-    logging.info(f"Found {len(domains)} domains: {', '.join(domains)}")
+    logger.info(f"Found {len(domains)} domains: {', '.join(domains)}")
 
     # Check which domains are available and which are redirects
     valid_domains = []
@@ -50,10 +89,12 @@ def main():
             continue
         
         redirects.append(final_url)
-        logging.warning(f"Redirect detected: {' => '.join(redirects)}")
+        logger.warning(f"Redirect detected: {' => '.join(redirects)}")
 
-    logging.info(f"Found {len(valid_domains)} reachable domains: {', '.join(valid_domains)}")
+    logger.info(f"Found {len(valid_domains)} reachable domains: {', '.join(valid_domains)}")
 
+    # Log the current reachable domains
+    execution_logger.info(f"Found {len(valid_domains)} reachable domain(s): {','.join(valid_domains)}")
 
     # ********** Update the template **********
     filter_content = template.format(
@@ -74,17 +115,18 @@ def main():
         old_filters = [line for line in file.read().splitlines() if not line.startswith("!")]  # Comments start with an exclamation mark.
 
     if old_filters == new_filters:
-        logging.info("Domains are already up to date.")
-        logging.info("Nothing to do here. Exiting..")
+        logger.info("Domains are already up to date.")
+        logger.info("Nothing to do here. Exiting..")
         return True
 
 
     # ********** Save the new file **********
-    logging.info("Changes detected. Updating file..")
+    logger.info("Changes detected. Updating file..")
     with open(OUTPUT_FILE, "w") as file:
         template = file.write(filter_content)
 
-    logging.info("File 'animesaturn_filters.txt' updated successfully..")
+    logger.info("File 'animesaturn_filters.txt' updated successfully..")
+    execution_logger.info("File 'animesaturn_filters.txt' updated successfully")
 
 
 def extract_domain(url):
