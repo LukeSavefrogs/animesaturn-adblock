@@ -27,7 +27,7 @@ stdout_handler.setFormatter(
 )
 
 
-file_logger = logging.FileHandler(".update_history.log")
+file_logger = logging.FileHandler(LOG_FILENAME)
 file_logger.setLevel(logging.INFO)
 file_logger.setFormatter(
     logging.Formatter(
@@ -48,7 +48,7 @@ execution_logger.addHandler(file_logger)
 
 def main():
     # ********** Clean the log **********
-    with open(".update_history.log", "a+") as file:
+    with open(LOG_FILENAME, "a+") as file:
         file.seek(0)
         lines = file.readlines()
 
