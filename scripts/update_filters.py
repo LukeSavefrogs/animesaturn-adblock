@@ -15,7 +15,7 @@ TEMPLATES_FOLDER = pathlib.Path("templates/")
 OUTPUT_FILE      = pathlib.Path("animesaturn_filters.txt")
 
 LOG_FILENAME     = "./logs/updates_history.log"
-LOG_MAX_LINES    = 100
+LOG_MAX_LINES    = 500
 
 stdout_handler = logging.StreamHandler(sys.stdout)
 stdout_handler.setLevel(logging.DEBUG)
