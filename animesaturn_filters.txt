@@ -1,12 +1,12 @@
 [Adblock Plus 2.0]
 ! Title: AnimeSaturn filters
 ! Version: 1.0.0
-! Last modified: 06-05-2024 00:08:51
+! Last modified: 31-05-2024 00:08:32
 ! Expires: 2 days (update frequency)
 ! Homepage: https://github.com/LukeSavefrogs/animesaturn-adblock/
 !
-animesaturn.bz,animesaturn.co,animesaturn.tv,animesaturn.so,animesaturn.in,animesaturn.cc,animesaturn.biz,animesaturn.com##.immagine-destra
-animesaturn.bz,animesaturn.co,animesaturn.tv,animesaturn.so,animesaturn.in,animesaturn.cc,animesaturn.biz,animesaturn.com##.alert.alert-danger
-animesaturn.bz,animesaturn.co,animesaturn.tv,animesaturn.so,animesaturn.in,animesaturn.cc,animesaturn.biz,animesaturn.com##.row.pt-2.pb-2
-animesaturn.bz,animesaturn.co,animesaturn.tv,animesaturn.so,animesaturn.in,animesaturn.cc,animesaturn.biz,animesaturn.com##.alert.alert-saturn
-animesaturn.bz,animesaturn.co,animesaturn.tv,animesaturn.so,animesaturn.in,animesaturn.cc,animesaturn.biz,animesaturn.com###footerdivfixed
+animesaturn.nl,animesaturn.bz,animesaturn.co,animesaturn.tv,animesaturn.so,animesaturn.in,animesaturn.cc,animesaturn.biz,animesaturn.com##.immagine-destra
+animesaturn.nl,animesaturn.bz,animesaturn.co,animesaturn.tv,animesaturn.so,animesaturn.in,animesaturn.cc,animesaturn.biz,animesaturn.com##.alert.alert-danger
+animesaturn.nl,animesaturn.bz,animesaturn.co,animesaturn.tv,animesaturn.so,animesaturn.in,animesaturn.cc,animesaturn.biz,animesaturn.com##.row.pt-2.pb-2
+animesaturn.nl,animesaturn.bz,animesaturn.co,animesaturn.tv,animesaturn.so,animesaturn.in,animesaturn.cc,animesaturn.biz,animesaturn.com##.alert.alert-saturn
+animesaturn.nl,animesaturn.bz,animesaturn.co,animesaturn.tv,animesaturn.so,animesaturn.in,animesaturn.cc,animesaturn.biz,animesaturn.com###footerdivfixed
